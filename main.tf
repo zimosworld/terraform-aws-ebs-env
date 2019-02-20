@@ -77,11 +77,11 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_environment" {
   //
   //  }
 
-  //  setting {
-  //    namespace = "aws:elasticbeanstalk:application:environment"
-  //    name      = "${element(concat(keys(var.env_variables), list(format(var.env_default_key, 0))), 0)}"
-  //    value     = "${lookup(var.env_variables, element(concat(keys(var.env_variables), list(format(var.env_default_key, 0))), 0), var.env_default_value)}"
-  //  }
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "APP_ENV"
+    value     = "${var.env_app_env}"
+  }
 
   #===================== Instances =====================#
 

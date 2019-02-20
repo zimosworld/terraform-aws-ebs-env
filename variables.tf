@@ -90,6 +90,11 @@ variable "ssh_source_restriction" {
   description = "Used to lock down SSH access to the EC2 instances."
 }
 
+variable "env_app_env" {
+  default = "production"
+  description = ""
+}
+
 #===================== Capacity =====================#
 
 variable "environment_type" {
