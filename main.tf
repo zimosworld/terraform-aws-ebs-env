@@ -5,7 +5,7 @@ module "aws_iam_ec2_profile" {
 }
 
 module "aws_iam_ebs_role" {
-  source = "git::https://github.com/zimosworld/terraform-aws-iam-ebs-service.git?ref=tags/0.1.0"
+  source = "git::https://github.com/zimosworld/terraform-aws-iam-ebs-service.git?ref=tags/0.1.1"
 
   name                       = "${var.name}"
   enhanced_reporting_enabled = "${var.enhanced_reporting_enabled}"
