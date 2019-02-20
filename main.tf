@@ -260,7 +260,7 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_environment" {
   setting {
     namespace = "aws:elb:listener:443"
     name      = "ListenerEnabled"
-    value     = "${var.loadbalancer_certificate_arn}"
+    value     = "${var.loadbalancer_certificate_arn == "" ? "false" : "true"}"
   }
 
   setting {
