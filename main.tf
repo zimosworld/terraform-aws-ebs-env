@@ -93,6 +93,12 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_environment" {
 
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
+    name      = "MonitoringInterval"
+    value     = "${var.monitoring_interval}"
+  }
+
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
     name      = "RootVolumeType"
     value     = "${var.root_volume_type}"
   }

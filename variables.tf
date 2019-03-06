@@ -69,6 +69,11 @@ variable "instance_type" {
   description = "The instance type used to run your application in an Elastic Beanstalk environment."
 }
 
+variable "monitoring_interval" {
+  default     = "1 minute"
+  description = "Interval at which you want Amazon CloudWatch metrics returned. [1 minute, 5 minute]"
+}
+
 variable "root_volume_type" {
   default     = "gp2"
   description = "Volume type (magnetic, general purpose SSD or provisioned IOPS SSD) to use for the root Amazon EBS volume attached to your environment's EC2 instances. [standard, gp2, io1]"
@@ -160,7 +165,7 @@ variable "loadbalancer_type" {
 }
 
 variable "loadbalancer_certificate_arn" {
-  default     = "false"
+  default     = ""
   description = "The ARN of the SSL certificate to bind to the listener. This option is only applicable to environments with an application load balancer and the certificate must be active in AWS Certificate Manager"
 }
 
