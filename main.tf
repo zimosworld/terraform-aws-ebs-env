@@ -509,4 +509,41 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_environment" {
 
   tags = "${var.tags}"
 
+  #===================== PHP =====================#
+
+  setting {
+    namespace = "aws:elasticbeanstalk:container:php:phpini"
+    name      = "document_root"
+    value     = "${var.document_root}"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:container:php:phpini"
+    name      = "memory_limit"
+    value     = "${var.memory_limit}"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:container:php:phpini"
+    name      = "zlib.output_compression"
+    value     = "${var.zlib_output_compression}"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:container:php:phpini"
+    name      = "allow_url_fopen"
+    value     = "${var.allow_url_fopen}"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:container:php:phpini"
+    name      = "display_errors"
+    value     = "${var.display_errors}"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:container:php:phpini"
+    name      = "max_execution_time"
+    value     = "${var.max_execution_time}"
+  }
 }

@@ -377,3 +377,35 @@ variable "tags" {
   default     = {}
   description = "Additional tags (e.g. `tags = { application_type = 'website' environment = 'production' }"
 }
+
+#===================== PHP =====================#
+
+variable "document_root" {
+  default     = "/"
+  description = "Specify the child directory of your project that is treated as the public-facing web root."
+}
+
+variable "memory_limit" {
+  default     = "256M"
+  description = "Amount of memory allocated to the PHP environment."
+}
+
+variable "zlib_output_compression" {
+  default     = "true"
+  description = "Specifies whether or not PHP should use compression for output."
+}
+
+variable "allow_url_fopen" {
+  default     = "On"
+  description = "Specifies if PHP's file functions are allowed to retrieve data from remote locations, such as websites or FTP servers."
+}
+
+variable "display_errors" {
+  default     = "Off"
+  description = "Specifies if error messages should be part of the output."
+}
+
+variable "max_execution_time" {
+  default     = "60"
+  description = "Sets the maximum time, in seconds, a script is allowed to run before it is terminated by the environment."
+}
